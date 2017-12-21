@@ -3,4 +3,8 @@
  */
 public class Game {
     public int kill_count;
+
+    public Game(){
+        kill_count = 0;
+    }
 }
