@@ -11,6 +11,11 @@ public class PlayingField extends JPanel {
     public final int square_sidelength = 10;
 
     public PlayingField(int height, int width){
+        //lägg till keyboard lyssnare.
+        this.addKeyListener(new KeyboardInput(this));
+        this.setFocusable(true);
+        this.requestFocusInWindow();
+        //fyll rutorna med Square objekt.
         setupSquares(height, width);
     }
 
@@ -28,11 +33,24 @@ public class PlayingField extends JPanel {
 
     @Override
     public void paintComponent(Graphics g){
+        paintSquares(g);
+    }
+
+
+    /**
+     * Måla alla rutorna på spelplanen.
+     * @param g Grafik komponent.
+     */
+    private void paintSquares(Graphics g){
         for(Square[] squares_: squares){
             for(Square square: squares_){
                 g.setColor(square.getColor());
                 g.fillRect(square.getX_positions(), square.getY_position(), square_sidelength, square_sidelength);
             }
         }
+    }
+
+    public Square[][] getSquares() {
+        return squares;
     }
 }
