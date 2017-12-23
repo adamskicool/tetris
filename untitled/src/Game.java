@@ -6,20 +6,20 @@ import javax.swing.*;
 public class Game {
 
     public Game(int height, int width){
-        JFrame frame = setupJFrame(height, width);
-        //lägg till komponenten PlayingField
-        PlayingField p = new PlayingField(height, width);
-        frame.add(p);
+        setupJFrame(height, width);
     }
 
 
-    private JFrame setupJFrame(int height, int width){
+    private void setupJFrame(int height, int width){
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(height, width);
         frame.setLocationRelativeTo(null);
+        //lägg till komponenten PlayingField
+        PlayingField p = new PlayingField(height, width);
+        frame.add(p);
+        //det sista man gör är att göra fönstret synligt.
         frame.setVisible(true);
-        return frame;
     }
 
 
