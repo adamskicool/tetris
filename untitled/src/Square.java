@@ -18,16 +18,8 @@ public class Square {
         return x_positions;
     }
 
-    public void setX_positions(int x_positions) {
-        this.x_positions = x_positions;
-    }
-
     public int getY_position() {
         return y_position;
-    }
-
-    public void setY_position(int y_position) {
-        this.y_position = y_position;
     }
 
     public Color getColor() {
